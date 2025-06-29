@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import CardPeliculas from '../components/CardPeliculas';
 const API='https://api.themoviedb.org/3/trending/movie/day?api_key=ecbcdcf9044928d12b179d9153f5a269&language=es-VE'
 const Tendencias = () => {
     const [datos, setDatos] = useState([]);
@@ -7,7 +8,7 @@ const Tendencias = () => {
     const [error, setError] = useState(null);
     
 
-     const getDatos = async () => {
+    const getDatos = async () => {
         try {
             const response = await fetch(API);
             if (!response.ok) {
@@ -48,54 +49,16 @@ const Tendencias = () => {
     
   return (
 <div className="container-fluid p-5 mb-5 bg-dark text-secondary">
-  <div className="row g-5 py-5">
+  <div className="row g-5 py-2">
     <div className="col-12 wow fadeIn" data-wow-delay="0.1s">
-      <h1 className="display-5 text-secondary text-center mb-0">Tendencias</h1>
+      <h1 className="display-5 text-primary text-center mb-0">Tendencias</h1>
     </div>
   </div>
 
   <div className='container'>
-  <div className='row'>
+  <div className='row mx-0'>
     {datos.map((item)=>(
-        <div className='col-xl-3 col-lg-4 col-sm-6 pt-4'>
-            <div className='card h-100 bg-dark text-white'>
-
-            <div className='card-header p-0'>
-                    <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} className="card-img-top" alt="" />            </div>
-
-            <div className='card-body text-center'>
-                <p>{item.title}</p>
-                <p className='text-danger'>{item.popularity}</p>
-                <p><span>Estreno:</span>{item.release_date}</p>
-            </div>
-
-                <div className="card-footer text-center ">
-                    <a href="#" className="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target={`#${item.id}`}>Modal</a>
-                    <a to={''} href="#" className='btn btn-primary me-3'>Detalles</a>
-                </div>
-
-            </div>
-            
-
-
-<div class="modal fade" id={`${item.id}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{item.title}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-        </div>
+      <CardPeliculas key={item.id} items={item}/>
     ))}
   </div>
   </div>
