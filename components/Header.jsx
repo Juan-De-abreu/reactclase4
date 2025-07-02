@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -25,7 +26,7 @@ const Header = () => {
         </button>
         <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div className="navbar-nav mr-auto py-0">
-            <a href="index.html" className="nav-item nav-link active">Tendencias Cine</a>
+            <Link to={`/tendencias/tendenciascine`} href="" className="nav-item nav-link active">Tendencias Cine</Link>
     <div className="nav-item dropdown">
               <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Genero Cine</a>
               <div className="dropdown-menu rounded-0 m-0">
@@ -44,7 +45,7 @@ const Header = () => {
                 <a href="404.html" className="dropdown-item">404 Error</a>
               </div>
             </div>
-            <a href="team.html" className="nav-item nav-link">Actores</a>
+            <Link to={"/actores"} href="#" className="nav-item nav-link">Actores</Link>
 
           </div>
           <div className="d-none d-lg-flex align-items-center py-2">
