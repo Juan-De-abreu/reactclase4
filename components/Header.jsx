@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import FiltroCine from './FiltroCine'
+import FiltroTv from './FiltroTv'
 
 const Header = () => {
   return (
@@ -30,19 +32,13 @@ const Header = () => {
     <div className="nav-item dropdown">
               <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Genero Cine</a>
               <div className="dropdown-menu rounded-0 m-0">
-                <a href="feature.html" className="dropdown-item">Features</a>
-                <a href="blog.html" className="dropdown-item">Blog Post</a>
-                <a href="testimonial.html" className="dropdown-item">Testimonial</a>
-                <a href="404.html" className="dropdown-item">404 Error</a>
+                  <FiltroCine/>
               </div>
             </div>
             <div className="nav-item dropdown">
-              <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+              <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Generos TV</a>
               <div className="dropdown-menu rounded-0 m-0">
-                <a href="feature.html" className="dropdown-item">Features</a>
-                <a href="blog.html" className="dropdown-item">Blog Post</a>
-                <a href="testimonial.html" className="dropdown-item">Testimonial</a>
-                <a href="404.html" className="dropdown-item">404 Error</a>
+                  <FiltroTv/>
               </div>
             </div>
             <Link to={"/actores"} href="#" className="nav-item nav-link">Actores</Link>

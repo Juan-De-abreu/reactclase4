@@ -28,12 +28,12 @@ const Tendencias = () => {
   let API = APIPelTendenciasCine;
   let titulo = "";
   let tipo = "";
-  let boton1 = "text-white me-2 m-3 fs-5";
-  let boton2 = "text-white me-3 m-2 fs-5";
-  let boton3 = "text-white me-2 m-3 fs-5";
-  let boton4 = "text-white me-2 m-3 fs-5";
-  let boton5 = "text-white me-3 m-2 fs-5";
-  let boton6 = "text-white me-2 m-3 fs-5";
+  let boton1 = "text-white me-2 fs-5 border-1 border-primary rounded-3 border p-2";
+  let boton2 = "text-white me-3 fs-5 border-1 border-primary rounded-3 border p-2";
+  let boton3 = "text-white me-2 fs-5 border-1 border-primary rounded-3 border p-2";
+  let boton4 = "text-white me-2 fs-5 border-1 border-primary rounded-3 border p-2";
+  let boton5 = "text-white me-3 fs-5 border-1 border-primary rounded-3 border p-2";
+  let boton6 = "text-white me-2 fs-5 border-1 border-primary rounded-3 border p-2";
 
   //if de los botones
 
@@ -49,7 +49,7 @@ const Tendencias = () => {
     titulo = "Tendencias en TV";
     tipo = "tv";
     boton2 =
-      "btn btn btn-outline-primary btn-sm me-2 mb-2 fs-4 active text-white";
+      "btn btn btn-outline-primary btn-sm me-2 mb-2 fs-4 active text-white ";
   }
   if (params.id == "proximamente") {
     API = APIPelProximamente + `&page=${page}`;
@@ -109,18 +109,18 @@ const Tendencias = () => {
 
   if (loading) {
     return (
-      <div className="text-center py-5">
+      <div className="text-center py-5 bg-dark">
         <div className="spinner-border text-primary" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
-        <p>Cargando Personajes...</p>
+        <p>Cargando Peliculas...</p>
       </div>
     );
   }
   if (error) {
     return (
-      <div className="text-center py-5 text-danger">
-        <h4>Error al cargar los Personajes</h4>
+      <div className="text-center py-5 text-danger bg-dark">
+        <h4 className="text-danger text-decoration-underline display-6">Error al cargar las peliculas</h4>
         <p>{error}</p>
       </div>
     );

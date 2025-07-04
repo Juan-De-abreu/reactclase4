@@ -50,11 +50,11 @@ const Actores = () => {
 
     if (loading) {
         return (
-            <div className="text-center py-5">
+            <div className="text-center py-5 bg-dark">
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
-                <p>Cargando las Peliculas...</p>
+                <p>Cargando las Actores...</p>
 
 
             </div>
@@ -62,8 +62,8 @@ const Actores = () => {
     }
     if (error) {
         return (
-            <div className="text-center py-5 text-danger">
-                <h4>Error al cargar los Personajes</h4>
+            <div className="text-center py-5 text-danger bg-dark">
+                <h4 className="text-danger">Error al cargar los Actores</h4>
                 <p>{error}</p>
                 <p class="text-center my-5">{API}</p>
 
